@@ -1,7 +1,8 @@
-// const prompt = require("prompt-sync")();
+// 1 - Criar uma função que retorne a quantidade de vogais da palavra passada.
 
+// a) Dar um exemplo de uso com uma palavra recebida via parâmetro da função.
 
-const world = 'Amanda'
+const world = 'jOAO'
 
 const vowelsCount = a =>{
 
@@ -9,7 +10,6 @@ const vowelsCount = a =>{
             return 'A palavra é indefinida'
         }if(isNaN(a)){
             var separarLetras = a.split('')
-            console.log(separarLetras)
             voewls(separarLetras)
             
         }else{
@@ -27,11 +27,20 @@ const voewls = array => {
                   
     }
            
-    console.log(count)
+    console.log(`A quantidade de vogais da palavra é ${count}`)
 }
 
 vowelsCount(world)
 
 
+// b) Dar um exemplo de uso com uma palavra recebida via input no formulário.
 
 
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+   
+readline.question('Escreva a palavra aqui: ', world => {
+    vowelsCount(world)
+  });
